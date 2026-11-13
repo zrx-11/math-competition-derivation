@@ -111,6 +111,15 @@ footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);color:v
     });
   });
 
+  // 深链：#s2-12 这类哈希直接转到对应课程文件
+  var H = location.hash.replace('#','');
+  if(H){
+    for(var hi=0; hi<lessons.length; hi++){
+      var hit = lessons[hi].sections.some(function(s){ return s.id === H; });
+      if(hit){ location.replace(lessons[hi].file + '#' + H); return; }
+    }
+  }
+
   var $ = function(id){ return document.getElementById(id); };
   var q = $('q'), tabs = $('tabs'), list = $('list'), hint = $('hint');
 
