@@ -115,6 +115,20 @@ h3{font-size:16px;margin:18px 0 6px}
 }
 .takeaway b{color:var(--acc-2)}
 
+/* 知识点 ↔ 试题 关联 */
+.related{
+  margin-top:14px;padding:10px 14px;border:1px dashed color-mix(in srgb, var(--acc) 35%, transparent);
+  border-radius:10px;background:var(--card);font-size:14px;
+}
+.related b{color:var(--acc);font-weight:700}
+.rel-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.rel-link{
+  display:inline-block;padding:5px 9px;border:1px solid var(--line);border-radius:8px;
+  background:var(--code);color:var(--ink);text-decoration:none;font-size:13.5px;line-height:1.35;
+}
+.rel-link:hover{border-color:var(--acc);color:var(--acc)}
+.rel-link .rno{color:var(--acc2);font-weight:700;margin-right:5px}
+
 /* 折叠推导 */
 details.fold,details.quiz{
   margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--card);
@@ -238,6 +252,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>这句话后面会反复用：隐函数求导、切平面方程、近似计算，全是它的变形。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：微分回答"变多快"，积分回答"累积多少"，两者由牛顿-莱布尼茨公式扣在一起。多元情形用偏导分管各方向，用全微分合成"任意方向的一步"。</div>
+  
   <details class="quiz"><summary>自测：一元情形下，为什么 $\int_a^b f(x)dx$ 能写成 $F(b)-F(a)$？</summary><div class="quiz-body">把区间切成小段，每段上 $F$ 的增量约等于 $f(x)\Delta x$，正好是该段细条的面积；全部相加时中间项两两抵消，只剩首尾 $F(b)-F(a)$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-1">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" disabled>‹ 已是第一节</button><button class="nav-btn next" data-target="s2-2"><span>2.2 导数：把"瞬时速度"变成一个可以算的极限</span><br>下一节 ›</button></div>
@@ -264,6 +279,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>取 $h=0.01$ 验算：$\dfrac{3.01^2-9}{0.01}=\dfrac{0.0601}{0.01}=6.01$，确实在向 6 靠。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：导数是"平均变化率的极限"，几何上是切线斜率。可导必连续，连续不一定可导（尖点处左右斜率打架）。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="06-试题解析-专题.html#s6-2"><span class="rno">6.2</span>变上限积分型极限：先换元，再洛必达，最后积分中值（2021·13 届·填空 3）</a></div></div>
   <details class="quiz"><summary>自测：$f(x)=|x|$ 在 $x=0$ 处为什么不可导？</summary><div class="quiz-body">连续但左右极限不相等：$\lim_{h\to0^-}\frac{|h|-0}{h}=-1$，$\lim_{h\to0^+}\frac{|h|-0}{h}=1$，两个单侧极限不同，所以导数不存在。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-2">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-1">‹ 上一节<br><span>2.1 微分与积分是一对反操作：先看清整条流水线</span></button><button class="nav-btn next" data-target="s2-3"><span>2.3 链式法则：变化会"传染"，而且要相乘</span><br>下一节 ›</button></div>
@@ -289,6 +305,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>常见错误：</b>只对外层求导，忘了乘内层导数。写成 $\cos(x^2)$ 就漏了 $2x$，答案会差一倍多。判断方法：随口问一句"内层是谁，它的导数乘了吗"。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：链式法则 = 外层导数 × 内层导数，层数多就一路乘到底。检查方法：把每一层都点名，确认每层的导数都乘上了。</div>
+  
   <details class="quiz"><summary>自测：求 $y=\ln(\cos x)$ 的导数。</summary><div class="quiz-body">外层 $\ln u$ 导数为 $1/u$，内层 $\cos x$ 导数为 $-\sin x$，故 $y\'=-\tan x$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-3">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-2">‹ 上一节<br><span>2.2 导数：把"瞬时速度"变成一个可以算的极限</span></button><button class="nav-btn next" data-target="s2-4"><span>2.4 隐函数求导：方程没解出 y，照样能求 y 的导数</span><br>下一节 ›</button></div>
@@ -319,6 +336,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>验证：$\dfrac{\partial z}{\partial x}=2x=2$、$\dfrac{\partial z}{\partial y}=2y=2$，与公式一致。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：隐函数求导 = 方程两边对自变量求导，遇到因变量乘一个导数，再解出来。一元得 $y\'=-F_x/F_y$，多元得 $z_x=-F_x/F_z$、$z_y=-F_y/F_z$；梯度 $(F_x,F_y,F_z)$ 就是曲面法向量。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="06-试题解析-专题.html#s6-7"><span class="rno">6.7</span>隐函数全微分：复合结构与 xF_u+yF_v（2024·15 届决赛·填空 3）</a><a class="rel-link" href="06-试题解析-专题.html#s6-10"><span class="rno">6.10</span>隐函数求偏导：先判断能不能除（2021·13 届·填空 2）</a></div></div>
   <details class="quiz"><summary>自测：设 $e^z+xy=z$ 确定 $z=z(x,y)$，求 $z_x$。</summary><div class="quiz-body">移项成 $F=e^z+xy-z=0$。$F_x=y$，$F_z=e^z-1$，故 $z_x=-\frac{y}{e^z-1}$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-4">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-3">‹ 上一节<br><span>2.3 链式法则：变化会"传染"，而且要相乘</span></button><button class="nav-btn next" data-target="s2-5"><span>2.5 高阶导数与莱布尼茨公式：乘积求 n 阶导的分配律</span><br>下一节 ›</button></div>
@@ -350,6 +368,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>教训：</b>高阶导数的符号与下标最容易错，公式写完一定回代 $n=1$ 或 $n=2$，一分钟就能挡住大部分错误。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：莱布尼茨公式 = 二项式定理的导数版，系数是组合数。遇到有理函数求高阶导数，先拆成部分分式，再用 $\left(\frac{1}{x-a}\right)^{(n)}=\frac{(-1)^n n!}{(x-a)^{n+1}}$。最后一定代一个具体 n 验算符号。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="06-试题解析-专题.html#s6-9"><span class="rno">6.9</span>高阶导数在一点的值：莱布尼茨公式只留一项（2020·12 届·填空 2）</a></div></div>
   <details class="quiz"><summary>自测：$(x^2 e^x)^{(3)}$ 按莱布尼茨公式展开是什么？</summary><div class="quiz-body">$=x^2e^x+3\cdot2x e^x+3\cdot2e^x=e^x(x^2+6x+6)$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-5">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-4">‹ 上一节<br><span>2.4 隐函数求导：方程没解出 y，照样能求 y 的导数</span></button><button class="nav-btn next" data-target="s2-6"><span>2.6 微分的几何应用：切平面、法线、曲线的切线</span><br>下一节 ›</button></div>
@@ -381,6 +400,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>验证：球心在原点、半径 $\sqrt3$，切平面到原点距离 $=3/\sqrt3=\sqrt3$，正好等于半径，说明相切。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：曲面的法向量就是梯度 $(F_x,F_y,F_z)$；切平面用点法式；空间曲线的切向量是 $(x\',y\',z\')$；两曲面交线的切向量是两个法向量的叉乘。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="03-第十五届A卷.html#s3-2"><span class="rno">3.2</span>题一：与直线相切的球，球心走出一条抛物柱面</a><a class="rel-link" href="04-第十六届A卷.html#s4-2"><span class="rno">4.2</span>题一：从一点出发的所有切线，围成一个锥面</a></div></div>
   <details class="quiz"><summary>自测：曲面 $z=x^2+y^2$ 在 $(1,1,2)$ 处的法向量是什么？</summary><div class="quiz-body">写成 $F=x^2+y^2-z$，$\nabla F=(2x,2y,-1)=(2,2,-1)$；也可用 $(f_x,f_y,-1)=(2,2,-1)$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-6">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-5">‹ 上一节<br><span>2.5 高阶导数与莱布尼茨公式：乘积求 n 阶导的分配律</span></button><button class="nav-btn next" data-target="s2-7"><span>2.7 定积分：把"面积"重新定义成"和的极限"</span><br>下一节 ›</button></div>
@@ -411,6 +431,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>理由：把 $G$ 看成 $F(b(x))-F(a(x))$，用链式法则即得。这是极限题里最常见的结构，17 届填空题"变限积分求极限"就是它。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：定积分 = 细条面积和的极限；牛顿-莱布尼茨公式的核心是"面积函数的导数等于被积函数"；变限积分求导 = 上限代入乘上限导数 − 下限代入乘下限导数。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="04-第十六届A卷.html#s4-3"><span class="rno">4.3</span>题二：一个含参积分，求导之后就变简单了</a><a class="rel-link" href="05-第十七届A卷.html#s5-7"><span class="rno">5.7</span>题六：集合的计数密度，决定积分能不能被"采样"逼近</a><a class="rel-link" href="06-试题解析-专题.html#s6-2"><span class="rno">6.2</span>变上限积分型极限：先换元，再洛必达，最后积分中值（2021·13 届·填空 3）</a></div></div>
   <details class="quiz"><summary>自测：$\dfrac{d}{dx}\int_0^{x^2}\sin t\,dt$ 等于多少？</summary><div class="quiz-body">$=\sin(x^2)\cdot2x=2x\sin(x^2)$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-7">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-6">‹ 上一节<br><span>2.6 微分的几何应用：切平面、法线、曲线的切线</span></button><button class="nav-btn next" data-target="s2-8"><span>2.8 定积分四把公式：对称、周期、三角、点火</span><br>下一节 ›</button></div>
@@ -451,6 +472,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>数值核对：$\ln(1+\sqrt2)=0.8814$，除以 $\sqrt2$ 得 $0.6232$。直接数值积分（细分成 1000 份）也在 0.62 附近，一致。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：四把公式：偶倍奇零（对称性）、周期平移、$\sin$ 与 $\cos$ 配对（代换 $x=\frac{\pi}{2}-t$）、点火公式（分部积分递推）。竞赛里的定积分优先看对称，别急着硬算。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="05-第十七届A卷.html#s5-3"><span class="rno">5.3</span>题二：$|f|^4$ 的积分等于"表示个数"的平方和</a></div></div>
   <details class="quiz"><summary>自测：$\int_{-1}^{1}\left(x^3+x\right)dx$ 等于多少？</summary><div class="quiz-body">被积函数 $x^3+x$ 是奇函数，区间对称，由偶倍奇零得 0。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-8">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-7">‹ 上一节<br><span>2.7 定积分：把"面积"重新定义成"和的极限"</span></button><button class="nav-btn next" data-target="s2-9"><span>2.9 二重积分：为什么极坐标里要多乘一个 r</span><br>下一节 ›</button></div>
@@ -488,6 +510,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>用轮换对称验证：$\iint x^2=\iint y^2$，故每个等于 $\dfrac{\pi}{4}$，加起来还是 $\dfrac{\pi}{2}$。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：二重积分换元要乘雅可比行列式；极坐标下就是 $r\,dr\,d\theta$（扇形环面积被半径放大）。对称区域优先用轮换对称把 $\iint x^2$ 与 $\iint y^2$ 互换，能省一半计算。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="06-试题解析-专题.html#s6-3"><span class="rno">6.3</span>轮换对称：二重积分先找对称，再动极坐标（2021·13 届·填空 5）</a></div></div>
   <details class="quiz"><summary>自测：$\iint_{x^2+y^2\le1}(x^2+y^2)dxdy$ 等于多少？</summary><div class="quiz-body">极坐标：$\int_0^{2\pi}\int_0^1 r^2\cdot r\,dr\,d\theta=2\pi\cdot\frac14=\frac{\pi}{2}$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-9">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-8">‹ 上一节<br><span>2.8 定积分四把公式：对称、周期、三角、点火</span></button><button class="nav-btn next" data-target="s2-10"><span>2.10 三重积分：柱坐标与球坐标的选择判据</span><br>下一节 ›</button></div>
@@ -519,6 +542,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>注意一个陷阱。</b>若被积函数含 $\dfrac{1}{x^2+y^2}$，而区域贴着 $x=y=0$（比如从原点出发的楔形），积分会按 $\ln r$ 发散。先检查区域与奇点的距离；贴着了就说明题目要么换了被积函数、要么区域被截断。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：直角看形状、柱坐标治 $x^2+y^2$、球坐标治 $x^2+y^2+z^2$。体积元素：柱 $r\,dr\,d\theta\,dz$，球 $\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta$。先检查区域是否贴着奇点，否则积分可能发散。</div>
+  
   <details class="quiz"><summary>自测：半径为 $a$ 的球，体积用球坐标算一遍。</summary><div class="quiz-body">$\int_0^{2\pi}d\theta\int_0^\pi\sin\varphi\,d\varphi\int_0^a\rho^2d\rho=2\pi\cdot2\cdot\frac{a^3}{3}=\frac{4\pi a^3}{3}$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-10">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-9">‹ 上一节<br><span>2.9 二重积分：为什么极坐标里要多乘一个 r</span></button><button class="nav-btn next" data-target="s2-11"><span>2.11 曲线积分：第一类算长度，第二类算做功</span><br>下一节 ›</button></div>
@@ -552,6 +576,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>这个公式怎么来的。</b>用 $u=\tan t$ 把 $[0,2\pi]$ 拆成四段，每段化为 $\dfrac{1}{a+(a+b)u^2}$ 的积分，凑 $\arctan$，四段相加正好 $\dfrac{2\pi}{\sqrt{a(a+b)}}$。记结论即可，竞赛里足够用。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：第一类看弧长（$ds$ 恒正、与方向无关），第二类看坐标（$dx$ 有符号、反向变号）。第二类靠参数化硬算，或用格林/斯托克斯公式转成重积分/曲面积分。</div>
+  
   <details class="quiz"><summary>自测：$L$ 为从 $(0,0)$ 到 $(1,1)$ 的直线段，求 $\int_L(x+y)ds$。</summary><div class="quiz-body">参数化 $x=t,y=t$，$t\in[0,1]$，$ds=\sqrt{1+1}dt=\sqrt2dt$，被积函数 $=2t$，故积分 $=\sqrt2\int_0^1 2t\,dt=\sqrt2$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-11">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-10">‹ 上一节<br><span>2.10 三重积分：柱坐标与球坐标的选择判据</span></button><button class="nav-btn next" data-target="s2-12"><span>2.12 格林公式：边界上的积分等于内部的"旋度总量"</span><br>下一节 ›</button></div>
@@ -577,6 +602,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>使用前必查两条：</b>曲线是否闭合并取正向；$P,Q$ 在区域内是否有奇点（分母为 0 的点）。有奇点时不能直接用，要挖小洞。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：格林公式 $\oint_L Pdx+Qdy=\iint_D(Q_x-P_y)dxdy$，把边界积分换成区域积分。取 $P=-y,Q=x$ 得面积公式 $S=\frac12\oint(xdy-ydx)$。用前查闭合、正向、无奇点。</div>
+  
   <details class="quiz"><summary>自测：用格林公式求椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 围成的面积。</summary><div class="quiz-body">取 $P=-y,Q=x$，$S=\frac12\oint(xdy-ydx)$。参数化 $x=a\cos t,y=b\sin t$，得 $\frac12\int_0^{2\pi}ab\,dt=\pi ab$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-12">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-11">‹ 上一节<br><span>2.11 曲线积分：第一类算长度，第二类算做功</span></button><button class="nav-btn next" data-target="s2-13"><span>2.13 高斯与斯托克斯：把"边界 = 内部"推广到三维</span><br>下一节 ›</button></div>
@@ -608,6 +634,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>几何核对：向量场 $(x,y,z)$ 在球面上处处沿法向向外，模长为 $a$，通量 $=a\cdot4\pi a^2=4\pi a^3$，一致。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：高斯：闭曲面通量 = 内部散度积分。斯托克斯：闭曲线环量 = 张成曲面上旋度的通量。两者都是"边界上的积分 = 内部的导数积分"，格林是它们在平面上的版本。方向（外法向、右手系）决定符号。</div>
+  
   <details class="quiz"><summary>自测：用高斯公式求 $\iint_\Sigma x\,dydz+y\,dzdx+z\,dxdy$，$\Sigma$ 为球面 $x^2+y^2+z^2=1$ 外侧。</summary><div class="quiz-body">散度 $=3$，体积 $\frac{4\pi}{3}$，积分 $=4\pi$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-13">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-12">‹ 上一节<br><span>2.12 格林公式：边界上的积分等于内部的"旋度总量"</span></button><button class="nav-btn next" data-target="s2-14"><span>2.14 真题串讲：五道题的共同套路</span><br>下一节 ›</button></div>
@@ -637,6 +664,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>五道题的共同点：</b>都不是"硬算"，而是先认结构。变限积分想到求导或等价阶；定积分想到对称和分部；二重想到换元与雅可比；闭曲线想到参数化或格林。认结构的时间只占几秒，却决定后面十分钟是否白算。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：真题的通用流程：判结构（变限/对称/闭合/含参）→ 选工具（求导、配对、参数化、格林）→ 算完用数值或量纲回验。硬算只在结构认不出时才用。</div>
+  
   <details class="quiz"><summary>自测：遇到 $\int_0^{\pi/2}f(\sin x)dx$，第一步该想什么？</summary><div class="quiz-body">想代换 $x=\frac{\pi}{2}-t$ 把它变成 $\int_0^{\pi/2}f(\cos x)dx$，两式相加或相减往往能消掉复杂项。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s2-14">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s2-13">‹ 上一节<br><span>2.13 高斯与斯托克斯：把"边界 = 内部"推广到三维</span></button><button class="nav-btn next" disabled>已是最后一节 ›</button></div>

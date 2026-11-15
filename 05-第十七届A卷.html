@@ -115,6 +115,20 @@ h3{font-size:16px;margin:18px 0 6px}
 }
 .takeaway b{color:var(--acc-2)}
 
+/* 知识点 ↔ 试题 关联 */
+.related{
+  margin-top:14px;padding:10px 14px;border:1px dashed color-mix(in srgb, var(--acc) 35%, transparent);
+  border-radius:10px;background:var(--card);font-size:14px;
+}
+.related b{color:var(--acc);font-weight:700}
+.rel-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.rel-link{
+  display:inline-block;padding:5px 9px;border:1px solid var(--line);border-radius:8px;
+  background:var(--code);color:var(--ink);text-decoration:none;font-size:13.5px;line-height:1.35;
+}
+.rel-link:hover{border-color:var(--acc);color:var(--acc)}
+.rel-link .rno{color:var(--acc2);font-weight:700;margin-right:5px}
+
 /* 折叠推导 */
 details.fold,details.quiz{
   margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--card);
@@ -239,6 +253,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>三件工具分别在题二、题六用到。先记住结论，推导里会给理由。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：本届六题：几何 1、积分 1、线代 2、微分 1、极限+积分 1。特点是"构造"——先满足大部分条件，把最后一个条件做成一个可解的方程。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="01-竞赛体系课.html#s1-1"><span class="rno">1.1</span>先看清这栋楼：五章依赖图与考试结构</a></div></div>
   <details class="quiz"><summary>自测：混合积 $\det(\vec a,\vec b,\vec c)=0$ 几何上意味着什么？</summary><div class="quiz-body">三个向量共面（线性相关），平行六面体体积为 0。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-1">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" disabled>‹ 已是第一节</button><button class="nav-btn next" data-target="s5-2"><span>5.2 题一：四面体内部的点，四个方向的体积向量之和为零</span><br>下一节 ›</button></div>
@@ -279,6 +294,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>四个向量：$\overrightarrow{OA}=\left(-\frac14,-\frac14,-\frac14\right)$、$\overrightarrow{OB}=\left(\frac34,-\frac14,-\frac14\right)$、$\overrightarrow{OC}=\left(-\frac14,\frac34,-\frac14\right)$、$\overrightarrow{OD}=\left(-\frac14,-\frac14,\frac34\right)$。相加：$x$ 分量 $-\frac14+\frac34-\frac14-\frac14=0$，三个分量都是 0。✓</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：四面体内部点的体积向量恒等式，本质是"重心坐标 + 体积比 = 高度比"。第一问靠"内外两侧"定符号，第二问靠"投影看高度"把 λ 换成 V。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="01-竞赛体系课.html#s1-11"><span class="rno">1.11</span>向量：点乘算投影，叉乘算面积</a></div></div>
   <details class="quiz"><summary>自测：若 $O$ 在四面体外部，(2) 的等式还成立吗？</summary><div class="quiz-body">不成立。此时部分 λ 为负，等式仍可写但系数不再是体积（体积非负），$V_A$ 等要带符号解释，题目条件"内部"不能去掉。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-2">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s5-1">‹ 上一节<br><span>5.1 卷面地图：这一届六题里有四道要"造东西"</span></button><button class="nav-btn next" data-target="s5-3"><span>5.3 题二：$|f|^4$ 的积分等于"表示个数"的平方和</span><br>下一节 ›</button></div>
@@ -318,6 +334,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>Hölder 路线（了解即可）：</b>$\left(\int|f|^2\right)^2\le\int|f|\cdot\int|f|^3$，而 $\int|f|^3\le\left(\int|f|^2\right)^{1/2}\left(\int|f|^4\right)^{1/2}$。代入 $N$ 与 $2N^2-N$，解出 $\int|f|\ge\dfrac{N^{3/2}}{\sqrt{2N^2}}\cdot$ 某常数，整理后得 $\dfrac{1}{2\sqrt N}$ 量级。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：$\int_0^1|f|^{2m}$ 的积分 = "和为 $s$ 的有序表示对个数"的 $m$ 次组合计数。加性唯一性把计数压到 $N$ 与 $N^2-N$ 两档，于是 $\int|f|^2=N$、$\int|f|^4=2N^2-N$。下界用 $|f|\le N$ 一步可得。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="02-微积分真题课.html#s2-8"><span class="rno">2.8</span>定积分四把公式：对称、周期、三角、点火</a></div></div>
   <details class="quiz"><summary>自测：若 $S=\{0,1,3\}$，加性唯一性成立吗？</summary><div class="quiz-body">不成立：$3=0+3=1+?$（1+1=2 不在 S 的和里）… 需检查 $0+3=3$ 与 $1+?$；实际 $1+?=3$ 需 $2\in S$，不成立，但 $3=0+3$ 与 $3=?$ 也仅一种；然而 $1+3=4$、$0+?$ … 关键在于 $0+0=1+?$。逐对检查：$0+0=0,\ 0+1=1,\ 0+3=3,\ 1+1=2,\ 1+3=4,\ 3+3=6$，六个和互不相同，故加性唯一性成立，$N=3$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-3">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s5-2">‹ 上一节<br><span>5.2 题一：四面体内部的点，四个方向的体积向量之和为零</span></button><button class="nav-btn next" data-target="s5-4"><span>5.4 题三：用"对角矩阵 + 一个角落参数"造出任意指定行列式</span><br>下一节 ›</button></div>
@@ -363,6 +380,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>而 $|A_3|=\det\operatorname{diag}(3,1,1)=3$ ✓。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：构造矩阵满足多个行列式条件：先让每个矩阵自身只承担一个条件（对角矩阵最省事），把最后一个条件留给"差矩阵的行列式"。差矩阵取对角 + 一个角落，行列式就是对角元之积加一项"参数 × 常数"，解一次方程即可。</div>
+  
   <details class="quiz"><summary>自测：为什么要求 $m,n\gt2$？</summary><div class="quiz-body">$m\gt2$ 保证 $m-2\neq0$ 可除；$n\gt2$ 保证 $(m-2)^{n-2}$ 中的余子式是 $n-1\ge2$ 阶、存在"后 $n-1$ 个对角元"这一结构（$n=2$ 时差矩阵退化成 1 阶余子式，公式形式不同）。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-4">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s5-3">‹ 上一节<br><span>5.3 题二：$|f|^4$ 的积分等于"表示个数"的平方和</span></button><button class="nav-btn next" data-target="s5-5"><span>5.5 题四：最小多项式、循环子空间，以及"和 A 交换的矩阵都是 A 的多项式"</span><br>下一节 ›</button></div>
@@ -408,6 +426,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>反例（$\mu_A\neq\chi_A$ 时结论失效）：</b>$A=E$（单位矩阵），$\mu_A=x-1$，$\chi_A=(x-1)^n$，不相等。任何矩阵 $B$ 都与 $E$ 交换，但 $f(E)$ 只能是数量矩阵。所以条件不可丢。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：三件事：一般位置能取到"最小多项式相同"的向量（参数避免）；循环子空间由 $\alpha,\dots,A^{d-1}\alpha$ 张成、维数是 $d$；$\mu_A=\chi_A$ 时交换矩阵只有 $A$ 的多项式这一种。$\mu_A\neq\chi_A$ 时结论失效（如 $A=E$）。</div>
+  
   <details class="quiz"><summary>自测：若 $\chi_A=(x-1)^2(x-2)$、$\mu_A=(x-1)(x-2)$，循环子空间最大能到几维？</summary><div class="quiz-body">$\deg\mu_A=2$，所以任何 $\alpha$ 的循环子空间维数 ≤2，不能张满三维。此时"交换 ⇒ 是多项式"不成立。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-5">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s5-4">‹ 上一节<br><span>5.4 题三：用"对角矩阵 + 一个角落参数"造出任意指定行列式</span></button><button class="nav-btn next" data-target="s5-6"><span>5.6 题五：二次多项式与函数比大小，凸性是唯一钥匙</span><br>下一节 ›</button></div>
@@ -443,6 +462,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>取 $f(x)=x^2+\sin(\pi x)$，则 $f''=2-\pi^2\sin(\pi x)$，$\sup f''=2$（在 $x=0,1$ 处 $f''\to2$ 但不取到，若改成 $f=x^2-\sin(\pi x)$ 则 $f''=2+\pi^2\sin$ 超界）。这个例子需小心，故只用第一个验证。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：比较 $f$ 与二次多项式，作差 $F=P-f$：$F$ 两端为 0、$F=2-f\ge0$ 故凸，凸函数夹在端点连线下方得 $F\le0$。再分"有一处严格"与"处处相等"两种，用凸函数内部不能取最大值排除中间情况。</div>
+  
   <details class="quiz"><summary>自测：若把条件改成 $\sup f=0$，结论变成什么？</summary><div class="quiz-body">$F=-f\ge0$ 仍凸（$P$ 退化成一次函数 $P=x\cdot0+$常数，即两端连线）。结论变为"$f$ 严格低于两端连线，或 $f$ 就是那条直线"——这正是凸函数的定义。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-6">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s5-5">‹ 上一节<br><span>5.5 题四：最小多项式、循环子空间，以及"和 A 交换的矩阵都是 A 的多项式"</span></button><button class="nav-btn next" data-target="s5-7"><span>5.7 题六：集合的计数密度，决定积分能不能被"采样"逼近</span><br>下一节 ›</button></div>
@@ -486,6 +506,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>这正是定积分的定义（黎曼和）。所以本题是把"黎曼和"推广到"只在 A 上采样"。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：密度条件 $\frac{S_n(0,1)}n\to p$ 可以"传染"到任意区间：$\frac{S_n(a,b)}n\to(b-a)p$。再把 $f$ 用阶梯函数上下夹住，两端都归约到阶梯情形，夹逼得极限 $=p\int_0^1f$。这是"用弱条件推强结论"的典型：先做简单对象，再用逼近搬过去。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="02-微积分真题课.html#s2-7"><span class="rno">2.7</span>定积分：把"面积"重新定义成"和的极限"</a></div></div>
   <details class="quiz"><summary>自测：若 $A$ 是全体偶数，$p$ 等于多少？(2) 的极限是什么？</summary><div class="quiz-body">$p=\frac12$，$S_n(0,1)/n\to\frac12$。极限为 $\frac12\int_0^1f$，相当于"每隔一个点采样、步长变 2 倍"的黎曼和。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-7">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s5-6">‹ 上一节<br><span>5.6 题五：二次多项式与函数比大小，凸性是唯一钥匙</span></button><button class="nav-btn next" data-target="s5-8"><span>5.8 收束：五章体系跑完三届，回头看整条路</span><br>下一节 ›</button></div>
@@ -519,6 +540,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 </ol></div></details>
   
   <div class="takeaway"><b>本节落点</b>：三届 18 题：几何 3、线代 6、积分 4、极限 3、微分 2、级数 1。几何年年有、线代占近半、积分靠结构不靠算、证明多于计算。复习优先级：几何 → 线代 → 积分结构 → 极限。</div>
+  
   <details class="quiz"><summary>自测：按本课统计，三届里出现最少的五章正文是哪一章？</summary><div class="quiz-body">第四章（无穷级数与常微分方程），只有 16 届题五一道级数题。但这不代表不用学——它一旦出现就是 15 分的难题。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s5-8">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s5-7">‹ 上一节<br><span>5.7 题六：集合的计数密度，决定积分能不能被"采样"逼近</span></button><button class="nav-btn next" disabled>已是最后一节 ›</button></div>

@@ -115,6 +115,20 @@ h3{font-size:16px;margin:18px 0 6px}
 }
 .takeaway b{color:var(--acc-2)}
 
+/* 知识点 ↔ 试题 关联 */
+.related{
+  margin-top:14px;padding:10px 14px;border:1px dashed color-mix(in srgb, var(--acc) 35%, transparent);
+  border-radius:10px;background:var(--card);font-size:14px;
+}
+.related b{color:var(--acc);font-weight:700}
+.rel-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.rel-link{
+  display:inline-block;padding:5px 9px;border:1px solid var(--line);border-radius:8px;
+  background:var(--code);color:var(--ink);text-decoration:none;font-size:13.5px;line-height:1.35;
+}
+.rel-link:hover{border-color:var(--acc);color:var(--acc)}
+.rel-link .rno{color:var(--acc2);font-weight:700;margin-right:5px}
+
 /* 折叠推导 */
 details.fold,details.quiz{
   margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--card);
@@ -235,6 +249,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>两条纪律。</b>第一，符号第一次出现时我会用一句白话解释，不让你猜。第二，每节都会标"前置知识"和"本节落点（后面用在哪）"，如果前面某处没跟上，回到对应小节，不要硬撑。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：五章不是五个孤岛：极限是发动机，微分和积分是它的两个方向，级数与方程是它的组合应用，空间几何提供舞台。按 1.1 → 1.13 的顺序读，每一步都只用到前面已经讲过的东西。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="03-第十五届A卷.html#s3-1"><span class="rno">3.1</span>卷面地图：六道题分别站在五章的哪一格</a><a class="rel-link" href="04-第十六届A卷.html#s4-1"><span class="rno">4.1</span>卷面地图：这一届把"边界条件"考到了极致</a><a class="rel-link" href="05-第十七届A卷.html#s5-1"><span class="rno">5.1</span>卷面地图：这一届六题里有四道要"造东西"</a><a class="rel-link" href="06-试题解析-专题.html#s6-1"><span class="rno">6.1</span>题库怎么用：每道题都挂在知识点上</a></div></div>
   <details class="quiz"><summary>自测：一张卷子 10 道题、100 分、150 分钟，填空和大题各占多少？</summary><div class="quiz-body">填空题 5 道，每题 6 分，共 30 分；计算题 5 道，每题 14 分，共 70 分。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-1">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" disabled>‹ 已是第一节</button><button class="nav-btn next" data-target="s1-2"><span>1.2 极限到底是什么：把"越来越接近"翻译成可以检验的句子</span><br>下一节 ›</button></div>
@@ -267,6 +282,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>第五步：极限与连续。</b>函数 $f$ 在 $x_0$ 连续，就是说 $\lim_{x\to x_0}f(x)=f(x_0)$——靠近 $x_0$ 时函数值靠近 $f(x_0)$，不断裂、不跳空。这句话后面讲导数时天天用。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：极限 = "你划任意小的圈（ε），我找得到一个门槛（N），门槛之后全部进圈"。四则运算靠 ε/2 分摊；唯一性靠反证加三角不等式。</div>
+  
   <details class="quiz"><summary>自测：用定义证明 $\lim_{n\to\infty}\dfrac{3n}{n+1}=3$，并给出 $\varepsilon=0.001$ 时的一个 $N$。</summary><div class="quiz-body">$\left|\dfrac{3n}{n+1}-3\right|=\dfrac{3}{n+1}\lt\varepsilon$ 等价于 $n\gt\dfrac{3}{\varepsilon}-1$。取 $\varepsilon=0.001$，$N=2999$；取 $N=3000$，则 $n\gt3000$ 时 $\dfrac{3}{n+1}\lt0.001$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-2">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-1">‹ 上一节<br><span>1.1 先看清这栋楼：五章依赖图与考试结构</span></button><button class="nav-btn next" data-target="s1-3"><span>1.3 求极限的八种武器：先判型，再选招</span><br>下一节 ›</button></div>
@@ -296,6 +312,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>另一类陷阱：洛必达的循环论证。</b>求 $\lim_{x\to0}\dfrac{\sin x}{x}$ 时用洛必达，会得到 $\dfrac{\cos x}{1}\to1$，看着没问题。但 $\sin x$ 的导数等于 $\cos x$ 这个结论，本身就是用 $\lim_{t\to0}\frac{\sin t}{t}=1$ 推出来的。用结论去证前提，逻辑上是转圈。这种题应该用几何面积夹逼或泰勒。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：八种武器不是并列的，有优先级：能裂项/夹逼的先做（干净），含乘除因子的用等价无穷小，求和结构用定积分定义，剩下 $0/0$ 才考虑洛必达或泰勒。判型永远第一步。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="06-试题解析-专题.html#s6-8"><span class="rno">6.8</span>等价无穷小与根式：先换分母，再换分子（2020·12 届·填空 1）</a></div></div>
   <details class="quiz"><summary>自测：$\lim_{x\to0}\dfrac{\tan x-\sin x}{x^3}$ 能不能把 $\tan x,\sin x$ 都换成 $x$？为什么？</summary><div class="quiz-body">不能。两者主项都是 $x$，相减后主项抵消，极限由三阶项决定；直接替换等于把 $x^3$ 项也扔掉，会得到错误的 0。正确做法是展开到三阶，结果为 $\frac12$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-3">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-2">‹ 上一节<br><span>1.2 极限到底是什么：把"越来越接近"翻译成可以检验的句子</span></button><button class="nav-btn next" data-target="s1-4"><span>1.4 裂项与夹逼：把"很多项"和"算不出的项"治住</span><br>下一节 ›</button></div>
@@ -329,6 +346,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>除以 $x$：绝对值不超过 $\dfrac{1}{x(\sqrt x-1)}\to0$。夹在 $-\dfrac{1}{x(\sqrt x-1)}$ 与 $+\dfrac{1}{x(\sqrt x-1)}$ 之间，极限为 0。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：裂项靠"第 k 项 = 前项 − 后项"，让中间成对消失；夹逼靠"上下界同极限"，专门对付带 sin、取整、阶乘这类算不出精确值的项。</div>
+  
   <details class="quiz"><summary>自测：求 $\sum_{k=1}^{n}\dfrac{1}{k(k+1)}$ 的极限。</summary><div class="quiz-body">$\dfrac{1}{k(k+1)}=\dfrac1k-\dfrac{1}{k+1}$，求和后 $=1-\dfrac{1}{n+1}\to1$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-4">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-3">‹ 上一节<br><span>1.3 求极限的八种武器：先判型，再选招</span></button><button class="nav-btn next" data-target="s1-5"><span>1.5 等价无穷小：乘除能换，加减不能换</span><br>下一节 ›</button></div>
@@ -364,6 +382,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>数值核对：$x=1000$ 时底 $=1.000998$，指数 $1999$，$\ln$ 值 $=1999\ln1.000998\approx1.994$，$e^{1.994}\approx7.34$，而 $e^2=7.389$，接近。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：等价替换只在乘除里做，因为它只是把"比值趋向 1"的因子换掉；加减会抵消主项，必须展开到真正决定大小的那一阶（通常用泰勒）。$1^\infty$ 型统一化成 $e^{\lim g(f-1)}$。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="06-试题解析-专题.html#s6-8"><span class="rno">6.8</span>等价无穷小与根式：先换分母，再换分子（2020·12 届·填空 1）</a><a class="rel-link" href="06-试题解析-专题.html#s6-11"><span class="rno">6.11</span>sin 的等价无穷小：把 πx 当整体换掉（2024·15 届决赛·填空 2）</a></div></div>
   <details class="quiz"><summary>自测：为什么 $\lim_{x\to0}\dfrac{\tan x-\sin x}{x^3}$ 不能用等价无穷小直接替换？</summary><div class="quiz-body">因为 $\tan x$ 与 $\sin x$ 的一阶主项都是 $x$，相减后主项抵消，极限由三阶项 $\frac{x^3}{2}$ 决定；替换只保留一阶，会把决定答案的项丢掉。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-5">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-4">‹ 上一节<br><span>1.4 裂项与夹逼：把"很多项"和"算不出的项"治住</span></button><button class="nav-btn next" data-target="s1-6"><span>1.6 定积分定义、洛必达、泰勒：三种工具的分工</span><br>下一节 ›</button></div>
@@ -392,6 +411,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>三者的分工</b>：出现 $\frac1n\sum f(\frac kn)$ 用定积分定义；出现"两项相减、主项抵消"用泰勒；只剩标准 $0/0$ 且求导会变简单时用洛必达。顺序别反：先用泰勒看清阶数，往往就不需要洛必达了。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：定积分定义把求和变成积分（专门治"1/n + k/n"结构）；泰勒治"相消"（告诉你剩到几阶）；洛必达是 $0/0$ 的通用后手，但要求导数之比极限存在，否则失效。</div>
+  
   <details class="quiz"><summary>自测：$\lim_{n\to\infty}\sum_{k=1}^{n}\dfrac{n}{n^2+k^2}$ 等于多少？</summary><div class="quiz-body">$=\lim\dfrac1n\sum_{k=1}^{n}\dfrac{1}{1+(k/n)^2}=\int_0^1\dfrac{dx}{1+x^2}=\arctan1-\arctan0=\dfrac{\pi}{4}$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-6">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-5">‹ 上一节<br><span>1.5 等价无穷小：乘除能换，加减不能换</span></button><button class="nav-btn next" data-target="s1-7"><span>1.7 递推数列：先证它非停不可，再解方程求落点</span><br>下一节 ›</button></div>
@@ -414,6 +434,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>为什么不能只解方程。</b>方程 $L=g(L)$ 只说明"如果收敛，落点在哪"，不保证收敛。比如 $x_{n+1}=2x_n$ 也满足 $L=2L$ 得 $L=0$，但这个数列除非初值为 0，否则发散到无穷。所以"先证存在"这一步不能省。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：递推数列两步走：单调 + 有界 ⇒ 收敛（这一步给"存在"）；递推式两边取极限解 $L=g(L)$（这一步给"值"）。只做第二步会写出一个根本不存在的极限。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="04-第十六届A卷.html#s4-7"><span class="rno">4.7</span>题六：复合迭代的极限，看"压缩比"和"不动点"</a></div></div>
   <details class="quiz"><summary>自测：$x_1=1$，$x_{n+1}=\sqrt{2+x_n}$，极限是多少？单调性和界怎么证？</summary><div class="quiz-body">极限满足 $L=\sqrt{2+L}$ 且 $L\gt0$，得 $L=2$。单调增：$x_2=\sqrt3\gt1$，若 $x_n\gt x_{n-1}$ 则开方保序得 $x_{n+1}\gt x_n$；上界 2：$x_1\lt2$，若 $x_n\lt2$ 则 $x_{n+1}\lt\sqrt4=2$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-7">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-6">‹ 上一节<br><span>1.6 定积分定义、洛必达、泰勒：三种工具的分工</span></button><button class="nav-btn next" data-target="s1-8"><span>1.8 一阶微分方程：把"变化率"翻译成"函数"</span><br>下一节 ›</button></div>
@@ -451,6 +472,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>满足时，方程的通解就是 $u(x,y)=C$。这个判据在 16、17 届真题里反复出现，第 4、5 课会用到。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：可分离方程靠"变量分家"；一阶线性方程靠"常数变易"——先解齐次，再把常数换成函数代回去。记住通解公式的推导过程，比背公式可靠。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="06-试题解析-专题.html#s6-5"><span class="rno">6.5</span>微分方程换元：把 cos y 当成新变量（2022·14 届·填空 4）</a></div></div>
   <details class="quiz"><summary>自测：解 $y'-2y=e^x$，$y(0)=1$。</summary><div class="quiz-body">$P=-2$，$Q=e^x$。$\int P dx=-2x$，故 $y=e^{2x}[\int e^x e^{-2x}dx+C]=e^{2x}[-e^{-x}+C]=Ce^{2x}-e^x$。由 $y(0)=1$ 得 $C=2$，所以 $y=2e^{2x}-e^x$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-8">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-7">‹ 上一节<br><span>1.7 递推数列：先证它非停不可，再解方程求落点</span></button><button class="nav-btn next" data-target="s1-9"><span>1.9 二阶常系数线性方程：特征方程是从哪里冒出来的</span><br>下一节 ›</button></div>
@@ -481,6 +503,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>算例：</b>$y''-3y'+2y=e^{3x}$。特征方程 $r^2-3r+2=0$，根 $r=1,2$。$\lambda=3$ 不是根，故 $k=0$，猜 $y^*=Ae^{3x}$。代入：$9Ae^{3x}-9Ae^{3x}+2Ae^{3x}=2Ae^{3x}=e^{3x}$，得 $A=\dfrac12$。通解 $y=C_1e^x+C_2e^{2x}+\dfrac12e^{3x}$。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：特征方程 = 把 $e^{rx}$ 代进齐次方程后约掉指数剩下的代数方程。三种根对应三种通解；重根补一个 $x$，复根用欧拉公式取实部虚部。非齐次 = 齐次通解 + 照形状猜的特解。</div>
+  
   <details class="quiz"><summary>自测：$y''+4y=0$ 的通解是什么？</summary><div class="quiz-body">特征方程 $r^2+4=0$，$r=\pm2i$，故 $\alpha=0,\beta=2$，通解 $y=C_1\cos2x+C_2\sin2x$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-9">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-8">‹ 上一节<br><span>1.8 一阶微分方程：把"变化率"翻译成"函数"</span></button><button class="nav-btn next" data-target="s1-10"><span>1.10 无穷级数：无限个数相加，凭什么有一个确定的和</span><br>下一节 ›</button></div>
@@ -508,6 +531,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>为什么条件收敛不能随便换项的顺序。</b>绝对收敛的级数可以任意重排，和不变；条件收敛的级数重排后会变成任何你想要的数，甚至发散。这是无穷和与有限和最大的区别，也是后面双重级数题的考点。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：级数收敛 = 部分和有极限。正项级数看"有没有天花板"，比值/根值判别法用等比级数当尺子；交错级数用莱布尼茨（单调减 + 趋于 0）。绝对收敛可随意重排，条件收敛不行。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="04-第十六届A卷.html#s4-6"><span class="rno">4.6</span>题五：通项趋于 0 却不肯乖乖收敛的两个级数</a><a class="rel-link" href="06-试题解析-专题.html#s6-4"><span class="rno">6.4</span>幂级数求和：先算和函数，再取极限（2022·14 届·填空 3）</a></div></div>
   <details class="quiz"><summary>自测：$\sum_{n=1}^{\infty}\dfrac{1}{n^2}$ 与 $\sum_{n=1}^{\infty}\dfrac1n$ 的比值判别法都得 $\rho=1$，为什么一个收敛一个发散？</summary><div class="quiz-body">比值判别法失效时不能下结论。两者的阶不同：$\frac1{n^2}$ 的部分和有上界（$\sum\frac1{n^2}=\frac{\pi^2}{6}$），而 $\frac1n$ 可以通过分组证明部分和无上界。需要改用比较法或积分法。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-10">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-9">‹ 上一节<br><span>1.9 二阶常系数线性方程：特征方程是从哪里冒出来的</span></button><button class="nav-btn next" data-target="s1-11"><span>1.11 向量：点乘算投影，叉乘算面积</span><br>下一节 ›</button></div>
@@ -539,6 +563,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>面积 $=|(5,-4,1)|=\sqrt{25+16+1}=\sqrt{42}\approx6.48$。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：点乘给数（投影、夹角、垂直判据），叉乘给向量（法向、面积、右手方向），混合积给体积。三件工具把"几何关系"翻译成"坐标运算"，是空间题的通用语言。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="05-第十七届A卷.html#s5-2"><span class="rno">5.2</span>题一：四面体内部的点，四个方向的体积向量之和为零</a></div></div>
   <details class="quiz"><summary>自测：$\vec a=(1,0,0)$，$\vec b=(0,1,0)$，$\vec a\times\vec b$ 等于什么？</summary><div class="quiz-body">$=(0\cdot0-0\cdot1,\\ 0\cdot0-1\cdot0,\\ 1\cdot1-0\cdot0)=(0,0,1)$，即 $z$ 轴正方向，模为 1，正好是单位正方形面积。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-11">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-10">‹ 上一节<br><span>1.10 无穷级数：无限个数相加，凭什么有一个确定的和</span></button><button class="nav-btn next" data-target="s1-12"><span>1.12 平面、直线、曲面：把几何对象写成方程</span><br>下一节 ›</button></div>
@@ -570,6 +595,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>验证：把 $(1,2,3)$ 代入 $1-2+6-5=0$；另取平面内一点，如令 $x=0,y=0$ 得 $z=2.5$，代入成立。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：平面 = 点 + 法向量（点法式），直线 = 点 + 方向向量（对称式），交线方向 = 两法向量叉乘，投影方向 = $(\vec n\times\vec s)\times\vec n$，旋转曲面靠"绕谁转谁不变"。</div>
+  <div class="related"><b>对应试题</b><div class="rel-list"><a class="rel-link" href="03-第十五届A卷.html#s3-2"><span class="rno">3.2</span>题一：与直线相切的球，球心走出一条抛物柱面</a><a class="rel-link" href="04-第十六届A卷.html#s4-2"><span class="rno">4.2</span>题一：从一点出发的所有切线，围成一个锥面</a><a class="rel-link" href="06-试题解析-专题.html#s6-6"><span class="rno">6.6</span>空间几何：点关于直线对称，先投影再中点（2023·15 届·填空 3）</a></div></div>
   <details class="quiz"><summary>自测：直线 $\dfrac{x-1}{1}=\dfrac{y}{1}=\dfrac{z-1}{1}$ 在平面 $x-y+2z-1=0$ 上的投影方向向量怎么算？</summary><div class="quiz-body">取 $\vec s=(1,1,1)$，$\vec n=(1,-1,2)$。先算 $\vec n\times\vec s=(-1-2,\\ 2-1,\\ 1+1)=(-3,1,2)$，再算 $(\vec n\times\vec s)\times\vec n=(1\cdot2-2\cdot(-1),\\ 2\cdot1-(-3)\cdot2,\\ -3\cdot(-1)-1\cdot1)=(4,8,2)$，可约去 2 得 $(2,4,1)$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-12">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-11">‹ 上一节<br><span>1.11 向量：点乘算投影，叉乘算面积</span></button><button class="nav-btn next" data-target="s1-13"><span>1.13 把五章拧成一根绳：复习路径与自测</span><br>下一节 ›</button></div>
@@ -605,6 +631,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <details class="quiz"><summary>自测 3：判断 $\sum_{n=1}^{\infty}\dfrac{(-1)^{n-1}}{\sqrt n}$ 是绝对收敛还是条件收敛。</summary><div class="quiz-body">$\sum\frac1{\sqrt n}$ 是 $p=\frac12\lt1$ 的 $p$ 级数，发散，故不绝对收敛；$\frac1{\sqrt n}$ 单调递减趋于 0，由莱布尼茨判别法原级数收敛。所以是条件收敛。</div></details></div></details>
   
   <div class="takeaway"><b>本节落点</b>：极限是发动机，微分与积分是它的两个方向，级数与方程是组合应用，空间几何是舞台。四周路线：极限 → 方程与级数 → 几何与微分 → 三届真题。能独立推出本节三道自测，才算过第一关。</div>
+  
   <details class="quiz"><summary>自测：如果只给你两周，应该优先刷哪两块？</summary><div class="quiz-body">极限（1.2–1.7）和微分方程/级数（1.8–1.10）。原因是这两块在卷面上题量最大、套路最固定；空间几何与线代题变化多，投入产出比低。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s1-13">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s1-12">‹ 上一节<br><span>1.12 平面、直线、曲面：把几何对象写成方程</span></button><button class="nav-btn next" disabled>已是最后一节 ›</button></div>

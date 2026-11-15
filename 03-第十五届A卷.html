@@ -115,6 +115,20 @@ h3{font-size:16px;margin:18px 0 6px}
 }
 .takeaway b{color:var(--acc-2)}
 
+/* 知识点 ↔ 试题 关联 */
+.related{
+  margin-top:14px;padding:10px 14px;border:1px dashed color-mix(in srgb, var(--acc) 35%, transparent);
+  border-radius:10px;background:var(--card);font-size:14px;
+}
+.related b{color:var(--acc);font-weight:700}
+.rel-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.rel-link{
+  display:inline-block;padding:5px 9px;border:1px solid var(--line);border-radius:8px;
+  background:var(--code);color:var(--ink);text-decoration:none;font-size:13.5px;line-height:1.35;
+}
+.rel-link:hover{border-color:var(--acc);color:var(--acc)}
+.rel-link .rno{color:var(--acc2);font-weight:700;margin-right:5px}
+
 /* 折叠推导 */
 details.fold,details.quiz{
   margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--card);
@@ -242,6 +256,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>这五条都在前面出现过，本卷只是把它们组合起来。读下面的题时，凡是卡住，回到对应小节，不要在这里硬啃。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：六道题覆盖四块：几何（题一）、多元微分（题二）、线代（题三、四）、极限（题六），题五横跨几何与分析。证明题占主导，写答案不够，要写理由。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="01-竞赛体系课.html#s1-1"><span class="rno">1.1</span>先看清这栋楼：五章依赖图与考试结构</a></div></div>
   <details class="quiz"><summary>自测：本卷哪两道题属于"拓展"而不是五章正文？</summary><div class="quiz-body">题三（循环基与几何重数）与题四（循环矩阵行列式）都是线性代数；题五属于度量空间几何，也不在五章正文里。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-1">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" disabled>‹ 已是第一节</button><button class="nav-btn next" data-target="s3-2"><span>3.2 题一：与直线相切的球，球心走出一条抛物柱面</span><br>下一节 ›</button></div>
@@ -271,6 +286,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>第六步：为什么不是别的曲面。</b>上面的推导是等价变形：球心满足条件 ⇔ 坐标满足 $z=\frac{x^2+a^2}{2a}$。没有引入额外限制，也没有漏解（$x$ 任意、$y$ 任意），所以轨迹就是这个抛物柱面的全部。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：球心轨迹题的全部技巧：把"过点"翻译成 $|PM|=R$，把"与直线相切"翻译成"到直线距离 $=R$"，两个式子相等消元。本题因方程缺 $y$，曲面是抛物柱面（母线平行 $y$ 轴）。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="02-微积分真题课.html#s2-6"><span class="rno">2.6</span>微分的几何应用：切平面、法线、曲线的切线</a><a class="rel-link" href="01-竞赛体系课.html#s1-12"><span class="rno">1.12</span>平面、直线、曲面：把几何对象写成方程</a></div></div>
   <details class="quiz"><summary>自测：若 $P=(0,0,a)$，$a=2$，球心轨迹方程是什么？</summary><div class="quiz-body">$z=\frac{x^2+4}{4}$，即 $x^2=4z-4$，仍是抛物柱面，母线平行 $y$ 轴。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-2">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s3-1">‹ 上一节<br><span>3.1 卷面地图：六道题分别站在五章的哪一格</span></button><button class="nav-btn next" data-target="s3-3"><span>3.3 题二：三元函数的最值，难点全在边界</span><br>下一节 ›</button></div>
@@ -320,6 +336,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>注意一个陷阱：</b>第 (3) 问最省事的做法不是再求一次偏导，而是看出"两项都非负"。很多同学在这里又去解驻点，白算十分钟。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：区域最值 = 内部驻点 + 边界分类。边界要按"曲面/底面"拆开，每块化成一元或二元问题再求。最后一问用"非负 + 取到 0"直接收工，比硬求驻点快得多。</div>
+  
   <details class="quiz"><summary>自测：$f=x^2+(y^2+z^2)(1-x)^3$ 在 $x=1$ 的截面上最小值是多少？</summary><div class="quiz-body">$f=1+(y^2+z^2)\cdot0=1$，恒为 1，最小值 1。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-3">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s3-2">‹ 上一节<br><span>3.2 题一：与直线相切的球，球心走出一条抛物柱面</span></button><button class="nav-btn next" data-target="s3-4"><span>3.4 题三：一个向量转 n 次能张满空间，等价于每个特征值只配一个特征向量</span><br>下一节 ›</button></div>
@@ -359,6 +376,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>若 $A=2I$，特征空间是整个平面，几何重数 2。任取 $\alpha$，$A\alpha=2\alpha$，两个向量成比例，永远张不满二维。也符合定理（几何重数不是 1，所以没有循环向量）。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：循环向量存在 ⇔ 每个特征值的几何重数都是 1 ⇔ 每个特征值只对应一个 Jordan 块。必要性靠"$cI-A$ 的秩 ≥ n−1"，充分性靠"最小多项式整除 + 次数矛盾"。</div>
+  
   <details class="quiz"><summary>自测：$A$ 是 $3\times3$ 单位矩阵，有没有循环向量？</summary><div class="quiz-body">没有。特征值 1 的几何重数是 3（整个空间都是特征空间），任取 $\alpha$，$\alpha,A\alpha,A^2\alpha$ 都是 $\alpha$ 的倍数，张不成三维。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-4">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s3-3">‹ 上一节<br><span>3.3 题二：三元函数的最值，难点全在边界</span></button><button class="nav-btn next" data-target="s3-5"><span>3.5 题四：一个三角矩阵的行列式，靠三条关系就能算出来</span><br>下一节 ›</button></div>
@@ -404,6 +422,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>验算（$n=4$）：</b>$\theta=\frac{\pi}{2}$，$\frac n2=2$。答案 $1-2^{4046}$。若改用 $n=3$：$\theta=\frac{2\pi}{3}$，$\frac32$，答案 $1-\left(\frac32\right)^{4046}$，为负值——行列式可为负，不奇怪。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：看到 $a_{st}$ 只依赖 $s+t$，立刻想到"低秩 + 循环"。本题用复向量把 $A$ 写成两个秩 1 矩阵之差，推出 $A^3=\frac{n^2}{4}A$，特征值只能是 $0,\pm\frac n2$，再用秩 ≤2 定重数，最后"行列式 = 特征值之积"。</div>
+  
   <details class="quiz"><summary>自测：若把 $A^{2023}$ 换成 $A^{2024}$，行列式是多少？</summary><div class="quiz-body">$A^2=\frac n4(\vec v\bar{\vec v}^T+\bar{\vec v}\vec v^T)$ 的特征值是 $\frac n2,\frac n2,0,\dots$（秩 2，两个非零特征值都为 $\frac n2$）。所以 $E+A^{2024}$ 的特征值为 $1+\left(\frac n2\right)^{1012}$（二重）与 $1$，行列式 $=\left(1+\left(\frac n2\right)^{1012}\right)^2$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-5">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s3-4">‹ 上一节<br><span>3.4 题三：一个向量转 n 次能张满空间，等价于每个特征值只配一个特征向量</span></button><button class="nav-btn next" data-target="s3-6"><span>3.6 题五：把集合平移一下，直径一定变大</span><br>下一节 ›</button></div>
@@ -440,6 +459,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>为什么必须要求 $c\neq0$：</b>若 $c=0$，$E+c=E$，两边相等，严格不等式不成立。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：直径的严格不等式，靠"取几乎最远的两点 + 余弦分情形"。核心恒等式是 $|(x-y)\pm c|^2=a^2+b^2\pm2ab\cos\theta$：只要 $\cos\theta$ 的符号选对，总有一个方向让距离变大。</div>
+  
   <details class="quiz"><summary>自测：若 $c$ 与所有"最远方向"都垂直，结论还成立吗？</summary><div class="quiz-body">成立。此时 $\cos\theta=0$，两种情形都给出 $|(x+c)-y|=\sqrt{a^2+b^2}\gt a$，反而更强。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-6">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s3-5">‹ 上一节<br><span>3.5 题四：一个三角矩阵的行列式，靠三条关系就能算出来</span></button><button class="nav-btn next" data-target="s3-7"><span>3.7 题六：极限存在，但不是 3</span><br>下一节 ›</button></div>
@@ -469,6 +489,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>（$L$ 的数值约 $1.83$：$a^{1.83}=3^{0.61}\approx1.83$，可用迭代验算。）</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>："极限存在"用单调有界：先证递增，再用归纳给出一个严格小于 3 的上界（本题是 $\frac52$）。"不是 3"只需这个上界。补充视角：$f\'(3)=\ln3\gt1$ 说明 3 是不稳定不动点。</div>
+  
   <details class="quiz"><summary>自测：如果把递推改成 $x_{n+1}=3^{x_n}/3$，极限还是 3 吗？</summary><div class="quiz-body">此时 $f(x)=3^{x-1}$，$f(3)=3$，$f\'(3)=\ln3\gt1$，同样是不稳定不动点；从 $x_1=1$ 出发会收敛到另一个交点，不是 3。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-7">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s3-6">‹ 上一节<br><span>3.6 题五：把集合平移一下，直径一定变大</span></button><button class="nav-btn next" data-target="s3-8"><span>3.8 收束：这张卷教了三种"证明模板"</span><br>下一节 ›</button></div>
@@ -489,6 +510,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>下一步怎么练：</b>拿这三套模板去对照第十六、十七届的题，先判"这题属于哪个模板"，再动手。判对了，路径就清楚了。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：三种模板：翻译成方程（几何/最值）、找到低维结构（线代）、先存在再排除（极限）。本卷积分 0 题、线代 3 题，说明证明能力比计算套路更值钱。</div>
+  
   <details class="quiz"><summary>自测：题四属于哪个模板？它的"低维结构"是什么？</summary><div class="quiz-body">模板 B。"低维结构"是 $\operatorname{rank}A\le2$ 与 $A^3=\frac{n^2}{4}A$，前者限制非零特征值个数，后者限制特征值取值。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s3-8">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s3-7">‹ 上一节<br><span>3.7 题六：极限存在，但不是 3</span></button><button class="nav-btn next" disabled>已是最后一节 ›</button></div>

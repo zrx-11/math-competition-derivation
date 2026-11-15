@@ -115,6 +115,20 @@ h3{font-size:16px;margin:18px 0 6px}
 }
 .takeaway b{color:var(--acc-2)}
 
+/* 知识点 ↔ 试题 关联 */
+.related{
+  margin-top:14px;padding:10px 14px;border:1px dashed color-mix(in srgb, var(--acc) 35%, transparent);
+  border-radius:10px;background:var(--card);font-size:14px;
+}
+.related b{color:var(--acc);font-weight:700}
+.rel-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.rel-link{
+  display:inline-block;padding:5px 9px;border:1px solid var(--line);border-radius:8px;
+  background:var(--code);color:var(--ink);text-decoration:none;font-size:13.5px;line-height:1.35;
+}
+.rel-link:hover{border-color:var(--acc);color:var(--acc)}
+.rel-link .rno{color:var(--acc2);font-weight:700;margin-right:5px}
+
 /* 折叠推导 */
 details.fold,details.quiz{
   margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--card);
@@ -239,6 +253,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p>三样都在本课后面展开。现在只需要记住一句话：<b>先看结构，再选工具</b>。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：本届六题：几何 1、积分 1、线代 2、级数 1、极限 1。难度集中在"边界与判别"——相切、收敛、秩、不动点，都是边界条件。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="01-竞赛体系课.html#s1-1"><span class="rno">1.1</span>先看清这栋楼：五章依赖图与考试结构</a></div></div>
   <details class="quiz"><summary>自测："通项趋于 0"能保证级数收敛吗？</summary><div class="quiz-body">不能。调和级数 $\sum 1/n$ 通项趋于 0 但发散。通项趋 0 是收敛的必要条件，不是充分条件。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-1">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" disabled>‹ 已是第一节</button><button class="nav-btn next" data-target="s4-2"><span>4.2 题一：从一点出发的所有切线，围成一个锥面</span><br>下一节 ›</button></div>
@@ -285,6 +300,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>第六步：为什么这个平面确实截出整条交线。</b>反过来，若 $M_1\in S$ 且 $x_1+y_1+z_1+2=0$，则上面的一次项系数为 0，二次方程有重根 $t=0$，直线 $M_0M_1$ 与 $S$ 相切，故 $M_1\in\Sigma$。所以交线恰是 $S\cap\pi$，是一个椭圆（或圆），且在上半叶。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：切锥题的标准流程：过顶点设直线 → 代入曲面得二次方程 → 判别式为 0 得方向约束 → 齐次方程换成坐标就是锥面。第二步求交线平面，用"切线 ⇔ 重根 ⇔ 一次项为 0"，比解出切点快得多。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="02-微积分真题课.html#s2-6"><span class="rno">2.6</span>微分的几何应用：切平面、法线、曲线的切线</a><a class="rel-link" href="01-竞赛体系课.html#s1-12"><span class="rno">1.12</span>平面、直线、曲面：把几何对象写成方程</a></div></div>
   <details class="quiz"><summary>自测：若顶点换到球心，球面 $x^2+y^2+z^2=1$ 的"切锥"是什么？</summary><div class="quiz-body">过球心的直线都与球面相交于两点，没有切线，所以不存在切锥；判别式恒为负（$t^2+1=0$ 无实根）。这说明"外部点"是切锥存在的前提。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-2">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s4-1">‹ 上一节<br><span>4.1 卷面地图：这一届把"边界条件"考到了极致</span></button><button class="nav-btn next" data-target="s4-3"><span>4.3 题二：一个含参积分，求导之后就变简单了</span><br>下一节 ›</button></div>
@@ -332,6 +348,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 </div></details>
   
   <div class="takeaway"><b>本节落点</b>：含参积分的标准套路：对参数求导把 $\ln$ 变成有理式 → 换元 → 拆部分分式 → 积分 → 再对参数积分回去。本题 $\varphi\'(s)=-\frac{\ln s}{2(1-s)}$，$\varphi(1)=\frac{\pi^2}{12}$，$\varphi(2)=\frac{\pi^2}{8}$。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="02-微积分真题课.html#s2-7"><span class="rno">2.7</span>定积分：把"面积"重新定义成"和的极限"</a></div></div>
   <details class="quiz"><summary>自测：$\varphi(0)$ 等于多少？</summary><div class="quiz-body">$s=0$ 时分子 $\ln1=0$，被积函数恒为 0，所以 $\varphi(0)=0$。这也解释了为什么 $\varphi(s)=\int_0^s\varphi\'(t)dt$。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-3">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s4-2">‹ 上一节<br><span>4.2 题一：从一点出发的所有切线，围成一个锥面</span></button><button class="nav-btn next" data-target="s4-4"><span>4.4 题三：伴随矩阵等于元素平方，只能推出零矩阵</span><br>下一节 ›</button></div>
@@ -369,6 +386,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>写题时的建议：</b>竞赛答案里这一步是"有限穷举"，评分看的是：① 是否说明 $\operatorname{rank}A^*\le1$；② 是否分了秩 0 与秩 1；③ 秩 1 时是否写出 $a_{ii}a_{jj}=\pm a_{ij}a_{ji}$ 这组关系。三条写全，即使穷举略粗也能拿大部分分。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：伴随矩阵题的两个抓手：$AA^*=0$（奇异）与 $\operatorname{rank}A^*\le1$。秩 0 直接得零矩阵；秩 1 时用"所有 2 阶子式为 0"得到 $a_{ii}a_{jj}=\pm a_{ij}a_{ji}$，再用非负性排除。</div>
+  
   <details class="quiz"><summary>自测：$A$ 可逆时，$A^*=(a_{ij}^2)$ 可能吗？</summary><div class="quiz-body">可能。例如 $A=E$，$A^*=E$，而 $(a_{ij}^2)=E$，相等。可逆性使 $AA^*=\det A\cdot E\neq0$，不再有上面的矛盾链。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-4">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s4-3">‹ 上一节<br><span>4.3 题二：一个含参积分，求导之后就变简单了</span></button><button class="nav-btn next" data-target="s4-5"><span>4.5 题四：次数之和不够大，就一定线性相关</span><br>下一节 ›</button></div>
@@ -405,6 +423,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>小例子（$n=4$，阈值 $\frac{3\cdot4}{2}=6$）：</b>四个多项式次数和为 5（比如 $3,1,1,0$）。按上述过程：两个次数 1，消掉一个得次数 0；此时次数和为 $3+1+0+0=4\lt6$，重复；若两个 0 次，消得零多项式，相关。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：这类"次数和不够"的题，用反证 + 下降法：次数互异 ⇒ 和至少是 $0+1+\cdots+(n-1)$；否则有两个同次数，消主项让次数和严格下降；整数不能无限下降，最终必出零多项式。</div>
+  
   <details class="quiz"><summary>自测：若 $\sum n_i=2047276$ 恰好取等，结论还成立吗？</summary><div class="quiz-body">不一定。取 $f_i=x^{i-1}$（$i=1,\dots,2024$），次数和为 $0+1+\cdots+2023=2047276$，且它们线性无关（次数互异）。这说明界是紧的。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-5">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s4-4">‹ 上一节<br><span>4.4 题三：伴随矩阵等于元素平方，只能推出零矩阵</span></button><button class="nav-btn next" data-target="s4-6"><span>4.6 题五：通项趋于 0 却不肯乖乖收敛的两个级数</span><br>下一节 ›</button></div>
@@ -445,6 +464,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>两题的共同教训：</b>"通项趋于 0"永远不够。第一题靠"与已知收敛级数比较差项"；第二题靠"配对/分部求和"把交错结构利用起来。看到 $\lfloor\sqrt n\rfloor$ 就该想到：它在每两个平方数之间是常数，要把区间切开看。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：带 $\lfloor\sqrt n\rfloor$ 的级数，先把 $n$ 按平方区间分段。第一题差项可和（$\sum n^{-3/2}$），直接条件收敛；第二题扰动与主项同阶，必须配对或分部求和，且要小心 $2n+1$ 是完全平方的那些点。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="01-竞赛体系课.html#s1-10"><span class="rno">1.10</span>无穷级数：无限个数相加，凭什么有一个确定的和</a></div></div>
   <details class="quiz"><summary>自测：$\sum\frac{(-1)^n}{n+\lfloor\sqrt n\rfloor}$ 收敛吗？</summary><div class="quiz-body">收敛且条件收敛。差项 $\left|\frac{1}{n+\lfloor\sqrt n\rfloor}-\frac1n\right|\le\frac{\sqrt n}{n(n-\sqrt n)}\le\frac{2}{n^{3/2}}$，可和。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-6">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s4-5">‹ 上一节<br><span>4.5 题四：次数之和不够大，就一定线性相关</span></button><button class="nav-btn next" data-target="s4-7"><span>4.7 题六：复合迭代的极限，看"压缩比"和"不动点"</span><br>下一节 ›</button></div>
@@ -491,6 +511,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>写题关键：</b>第 (1) 问必须写出 $f_i(t)-3$ 与 $t-3$ 的比例关系；第 (2) 问必须给出 $|f_1(t)|\le|t|^3/3$ 这个估计（用积分表示最省事）。只写"因为导数小于 1 所以收敛"在第 (2) 问是错的——$f_2'(0)=1$。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：复合迭代的极限 = 共同不动点，条件是压缩。线性压缩看 $|f\'|$，比率 $<1$；第 (2) 问 $f_2\'(0)=1$，必须改用积分估计 $|f_1(t)|\le|t|^3/3$，得到三次压缩。极限与初值无关，因为初值只影响收敛速度。</div>
+  <div class="related"><b>对应知识点</b><div class="rel-list"><a class="rel-link" href="01-竞赛体系课.html#s1-7"><span class="rno">1.7</span>递推数列：先证它非停不可，再解方程求落点</a></div></div>
   <details class="quiz"><summary>自测：若 $f_1(t)=2t$，会发生什么？</summary><div class="quiz-body">不动点只有 0，但 $|f_1\'|=2\gt1$，迭代 $x,2x,4x,\dots$ 发散（除非 $x=0$）。压缩比大于 1 时不动点是"排斥"的。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-7">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s4-6">‹ 上一节<br><span>4.6 题五：通项趋于 0 却不肯乖乖收敛的两个级数</span></button><button class="nav-btn next" data-target="s4-8"><span>4.8 收束：这一届教的三种"病态"处理</span><br>下一节 ›</button></div>
@@ -516,6 +537,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 <p><b>五章分布：</b>几何 1、积分 1、级数 1、极限 1、线代 2。与第十五届相比，这一届多了积分与级数，少了一道纯几何证明，但"证明为主"的风格没变。</p></div></details>
   
   <div class="takeaway"><b>本节落点</b>：三种病态：重根（用判别式/一次项为 0 反推）、秩亏（先定秩 ≤1 再穷举）、非单调交错（配对或分部求和）。三者共用一条原则：先缩小情形，再用等价变换代替精确求解。</div>
+  
   <details class="quiz"><summary>自测：题五第一个级数为什么不能用莱布尼茨判别法？</summary><div class="quiz-body">因为通项 $\frac{1}{n+(-1)^n\lfloor\sqrt n\rfloor}$ 不单调：$(-1)^n$ 让分母忽大忽小。必须先与 $1/n$ 比较差项，证明差项绝对收敛，再借 $(-1)^n/n$ 的收敛性。</div></details>
   <div class="toolbar"><button class="mark-btn" type="button" data-sec="s4-8">标记本节已学</button></div>
   <div class="chapter-nav"><button class="nav-btn prev" data-target="s4-7">‹ 上一节<br><span>4.7 题六：复合迭代的极限，看"压缩比"和"不动点"</span></button><button class="nav-btn next" disabled>已是最后一节 ›</button></div>
